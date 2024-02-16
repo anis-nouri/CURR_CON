@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <h2>Currency Converter</h2>
+    <form action="#">
+        <div class="amount">
+            <p>Enter Amount</p>
+            <input type="text" name="amount" [(ngModel)]="amount">
+
+        </div>
+        <div class="drop-list">
+            <div class="from">
+                <p>From</p>
+                <div class="select-box">
+                    <img [src]="fromCurrency.flagUrl" alt="flag">
+                    <p>{{ fromCurrency.code }}</p>
+                </div>
+            </div>
+            <div class="icon"><img src="..\assets\direction.png" (click)="toggleCurrency()">
+            </div>
+            <div class="to">
+                <p>To</p>
+                <div class="select-box" >
+                    <img [src]="toCurrency.flagUrl" alt="flag">
+                    <p>{{ toCurrency.code }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="fixed-rate">
+            <p>Fixed Exchange Rate</p>
+            <input type="text" [(ngModel)]="fixedExchangeRate" (input)="disableFixedRate()">
+        </div>
+        <div class="exchange-rate">
+            Exchange Rate: {{ exchangeRate }}
+        </div>
+        <div class="message" *ngIf="conversionMessage">{{ conversionMessage }}</div>
+
+        <button (click)="onConvertClick()">Convert</button>
+    </form>
+</div>

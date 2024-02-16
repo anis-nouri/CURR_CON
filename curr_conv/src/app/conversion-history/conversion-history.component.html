@@ -1,0 +1,26 @@
+
+<div class="table-responsive">
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Real Rate</th>
+          <th>Entered Rate</th>
+          <th>Initial Value</th>
+          <th>Initial Currency</th>
+          <th>Calculated Value</th>
+          <th>Calculated Currency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of conversionHistory">
+          <td>{{ request.realRate }}</td>
+          <td>{{ request.enteredRate }}</td>
+          <td>{{ request.initialValue }}</td>
+          <td>{{ request.initialCurrency }}</td>
+          <td>{{ request.calculatedValue }}</td>
+          <td>{{ request.calculatedCurrency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
